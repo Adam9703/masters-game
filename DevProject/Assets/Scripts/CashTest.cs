@@ -15,15 +15,15 @@ public class CashTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             // get component finds the script, allows you to call functions from other script
             cam.GetComponent<CashHandler>().addCash(5);
         }
-        /*if (Input.GetMouseButtonDown(2))
+        if (Input.GetMouseButtonDown(2))
         {
             cam.GetComponent<CashHandler>().subtractCash(5);
         }
-        */
+        
     }
 }
