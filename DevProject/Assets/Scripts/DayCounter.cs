@@ -60,7 +60,7 @@ public class DayCounter : MonoBehaviour
 
     void HoursCounter()
     {
-        Debug.Log("HoursCounter");
+        //Debug.Log("HoursCounter");
 
         // If the counter is = to 24 then reset back to 0 (only 24 hrs in a day)
         if (counter == 24)
