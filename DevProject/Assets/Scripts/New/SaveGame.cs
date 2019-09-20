@@ -42,6 +42,9 @@ public class SaveGame : MonoBehaviour
         PlayerPrefs.SetInt("SaveCash", GlobalCash.cashCount);
         PlayerPrefs.SetInt("SaveMiners", GlobalMiner.minePerSec);
         PlayerPrefs.SetInt("SaveShops", GlobalShop.numberOfShops);
+        PlayerPrefs.SetInt("SaveIron", GlobalIron.ironCount);
+        PlayerPrefs.SetInt("SaveStone", GlobalStone.stoneCount);
+        PlayerPrefs.SetInt("SaveDiamonds", GlobalDiamonds.diamondCount);
         saveValue *= 2; // Multiplies the save value by 2 each time, costs more each time you save
         PlayerPrefs.SetInt("SaveValue", saveValue); // Save the saveValue again with the new value after calculation cost
     }

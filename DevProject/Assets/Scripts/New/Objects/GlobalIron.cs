@@ -16,9 +16,9 @@ public class GlobalIron : MonoBehaviour
         fakeSellButtonSat, fakeSellTextSat, realSellButtonSat, realSellTextSat;
 
     public int currentCash;
-    public static int ironValueMars = 4;
-    public static int ironValueSat = 7;
-    public static bool turnOffButton = false;
+    public static int ironValueMars = 4; // Default value for iron on mars
+    public static int ironValueSat = 7; // Default value for iron on saturn
+    public static bool turnOffButton = false; // Set turn off button to false by default
     public GameObject ironDisplay;
     public static int ironCount;
     public int internalIron;
@@ -28,8 +28,8 @@ public class GlobalIron : MonoBehaviour
     {
         currentCash = GlobalCash.cashCount; // Makes sure the current cash for this script references the real cash value
 
-        internalIron = ironCount;
-        ironDisplay.GetComponent<Text>().text = "Iron: " + internalIron;
+        internalIron = ironCount; // Retrieve the player's current iron count and set to a new variable
+        ironDisplay.GetComponent<Text>().text = "Iron: " + internalIron; // Display the count by retrieving the text object
 
         fakeTextMars.GetComponent<Text>().text = "Buy - $" + ironValueMars;
         realTextMars.GetComponent<Text>().text = "Buy - $" + ironValueMars;
@@ -43,6 +43,8 @@ public class GlobalIron : MonoBehaviour
         fakeSellTextSat.GetComponent<Text>().text = "Sell - $" + ironValueSat;
         realSellTextSat.GetComponent<Text>().text = "Sell - $" + ironValueSat;
 
+        // Check if the players current cash is more than the cost of the iron on each store
+        // If it is, they have enough money to buy an item so set the button to interactable
         if (currentCash >= ironValueMars || currentCash >= ironValueSat)
         {
             fakeButtonMars.SetActive(false);
@@ -51,6 +53,7 @@ public class GlobalIron : MonoBehaviour
             fakeButtonSat.SetActive(false);
             realButtonSat.SetActive(true);
         }
+        // If the player has 1 or more iron then they can sell it to the store
         if (ironCount >= 1)
         {
             fakeSellButtonMars.SetActive(false);
@@ -59,7 +62,7 @@ public class GlobalIron : MonoBehaviour
             fakeSellButtonSat.SetActive(false);
             realSellButtonSat.SetActive(true);
         }
-
+        // If the player doesn't have enough then set the turn off button to true so that it is not interactable
         if (turnOffButton == true)
         {
             realButtonMars.SetActive(false);

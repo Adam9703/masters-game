@@ -26,22 +26,22 @@ public class ButtonClick : MonoBehaviour
 
     public void BuyIron()
     {
-        if(GlobalCash.cashCount == 0)
+        if(GlobalCash.cashCount <= 0)
         {
             ironStatus.GetComponent<Text>().text = "You don't have enough cash."; // Show this message in a text box on the screen
             ironStatus.GetComponent<Animation>().Play("StatusAnim"); // Apply and animation to the text
         }
         else
         {
-            if (Mars.GetComponent<Canvas>().isActiveAndEnabled)
+            if (Mars.GetComponent<Canvas>().isActiveAndEnabled) // Check if the canvas object for mars is enabled in the scene
             {
                 GlobalIron.ironCount += 1;
-                GlobalCash.cashCount -= GlobalIron.ironValueMars;
+                GlobalCash.cashCount -= GlobalIron.ironValueMars; // Purchase the iron for the value on mars
             }
-            if (Saturn.GetComponent<Canvas>().isActiveAndEnabled)
+            if (Saturn.GetComponent<Canvas>().isActiveAndEnabled) // Check if the canvas for saturn is enabled
             {
                 GlobalIron.ironCount += 1;
-                GlobalCash.cashCount -= GlobalIron.ironValueSat;
+                GlobalCash.cashCount -= GlobalIron.ironValueSat; // Purchase the iron for the value on saturn
             }
             
         }
@@ -71,7 +71,7 @@ public class ButtonClick : MonoBehaviour
 
     public void BuyDiamond()
     {
-        if (GlobalCash.cashCount == 0)
+        if (GlobalCash.cashCount <= 0)
         {
             diamondStatus.GetComponent<Text>().text = "You don't have enough cash."; // Show this message in a text box on the screen
             diamondStatus.GetComponent<Animation>().Play("StatusAnim"); // Apply and animation to the text
@@ -116,7 +116,7 @@ public class ButtonClick : MonoBehaviour
 
     public void BuyStone()
     {
-        if (GlobalCash.cashCount == 0)
+        if (GlobalCash.cashCount <= 0)
         {
             stoneStatus.GetComponent<Text>().text = "You don't have enough cash."; // Show this message in a text box on the screen
             stoneStatus.GetComponent<Animation>().Play("StatusAnim"); // Apply and animation to the text

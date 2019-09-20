@@ -29,8 +29,8 @@ public class AutoSell : MonoBehaviour
         else
         {
             GlobalCash.cashCount += InternalIncrease;
-            GlobalCopper.copperCount -= 1;
-            yield return new WaitForSeconds(1);
+            GlobalCopper.copperCount -= 1; // Take 1 from the copper count
+            yield return new WaitForSeconds(1); // Wait for 1 second before setting the state back to false
             SellingCopper = false;
         }
     }

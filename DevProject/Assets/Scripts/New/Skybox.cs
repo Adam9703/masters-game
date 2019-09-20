@@ -12,9 +12,12 @@ public class Skybox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RenderSettings.skybox = backgroundOne;
+        RenderSettings.skybox = backgroundOne; // The default skybox when the game is loaded
     }
     
+    // Below each function changes the skybox to a new material
+    // This is triggered on button click, e.g. the player clicks travel to mars then
+    // the mars skybox is loaded
     public void MarsSky()
     {
         RenderSettings.skybox = backgroundTwo;

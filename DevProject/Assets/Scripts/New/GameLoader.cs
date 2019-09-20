@@ -9,10 +9,14 @@ public class GameLoader : MonoBehaviour
     public int saveMiners;
     public int saveShops;
     public int savedValue;
+    public int saveIron;
+    public int saveDiamonds;
+    public int saveStone;
 
     // Start is called before the first frame update
     void Start()
     {
+        // This function sets the save variables = to the value of that stored in the playerpref on save click
         if(MainMenu.isLoading == true)
         {
             saveCopper = PlayerPrefs.GetInt("SaveCopper");
@@ -26,6 +30,15 @@ public class GameLoader : MonoBehaviour
 
             saveShops = PlayerPrefs.GetInt("SaveShops");
             GlobalShop.numberOfShops = saveShops;
+
+            saveIron = PlayerPrefs.GetInt("SaveIron");
+            GlobalIron.ironCount = saveIron;
+
+            saveStone = PlayerPrefs.GetInt("SaveStone");
+            GlobalStone.stoneCount = saveStone;
+
+            saveDiamonds = PlayerPrefs.GetInt("SaveDiamonds");
+            GlobalDiamonds.diamondCount = saveDiamonds;
 
             savedValue = PlayerPrefs.GetInt("SaveValue");
             SaveGame.saveValue = savedValue;

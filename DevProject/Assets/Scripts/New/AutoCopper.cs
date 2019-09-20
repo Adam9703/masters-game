@@ -22,8 +22,8 @@ public class AutoCopper : MonoBehaviour
 
     IEnumerator MineTheCopper()
     {
-        GlobalCopper.copperCount += InternalIncrease;
-        yield return new WaitForSeconds(1);
+        GlobalCopper.copperCount += InternalIncrease; // Give the players copper count +1
+        yield return new WaitForSeconds(1); // Wait for 1 second before setting mining state to false
         MiningCopper = false;
     }
 }
